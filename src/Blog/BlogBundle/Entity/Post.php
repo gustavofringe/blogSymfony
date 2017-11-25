@@ -12,10 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
-    public function __construct()
-    {
-        $this->createdAt = new \Datetime();
-    }
 
     /**
      * @var int
