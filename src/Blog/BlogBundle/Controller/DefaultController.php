@@ -14,4 +14,16 @@ class DefaultController extends Controller
     {
         return $this->render('BlogBlogBundle:Default:index.html.twig');
     }
+
+    /**
+     * @Route("/articles/{id}",
+     *      name="blog_view",
+     *     defaults={"id"=1},
+     *     requirements={"id":"\d+"}
+     * )
+     * @param $id
+     */
+    public function viewAction($id){
+        return $this->render('BlogBlogBundle:Default:view.html.twig',compact('id'));
+    }
 }

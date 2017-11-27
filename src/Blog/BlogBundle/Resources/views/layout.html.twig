@@ -39,7 +39,7 @@
         </div>
     </nav>
 {% endblock %}
-{% block script %}
-    <script>window.jQuery || document.write('<script src={{ asset("js/jquery.min.js")}}><\/script>')</script>
+{% block scripts %}
+    <script>window.jQuery || document.write('<script src={{ asset("js/jquery-3.2.1.min.js")}}><\/script>')</script>
     <script src={{ asset("js/bootstrap.min.js")}}></script>
 {% endblock %}
