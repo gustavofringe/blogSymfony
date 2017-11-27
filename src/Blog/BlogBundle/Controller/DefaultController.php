@@ -4,7 +4,7 @@ namespace Blog\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-
+use Blog\BlogBundle\Entity\Post;
 class DefaultController extends Controller
 {
     /**
@@ -12,7 +12,9 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('BlogBlogBundle:Default:index.html.twig');
+      $card = $this->getDoctrine()->getRepository(Post::class);
+      $products = $card->findAll();
+        return $this->render('BlogBlogBundle:Default:index.html.twig',compact('products'));
     }
 
     /**
